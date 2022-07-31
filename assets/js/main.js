@@ -33,7 +33,8 @@
 
       $('#posts-carousel-3col').owlCarousel({
         navigation : true,
-        items : 3,
+          
+        items : 4,
         itemsDesktop : [1199,3],
         itemsDesktopSmall : [979,3],
         afterAction: function(el){
