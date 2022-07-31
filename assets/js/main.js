@@ -33,10 +33,21 @@
 
       $('#posts-carousel-3col').owlCarousel({
         navigation : true,
-        pagination: true,
         items : 3,
         itemsDesktop : [1199,3],
-        itemsDesktopSmall : [979,3]
+        itemsDesktopSmall : [979,3],
+        afterAction: function(el){
+          //remove class active
+          this
+          .$owlItems
+          .removeClass('owl-active')
+       
+          //add class active
+          this
+          .$owlItems //owl internal $ object containing items
+          .eq(this.currentItem + 1)
+          .addClass('owl-active')    
+           } 
       });
 
       $('#posts-carousel-3col').find('.owl-prev').html('<i class="fa fa-angle-left"></i>');
@@ -72,7 +83,7 @@
       });
     });
 
-    
-
     $('body').on('scroll', function(){Waypoint.refreshAll();});
 
+
+    

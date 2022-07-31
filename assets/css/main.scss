@@ -829,6 +829,8 @@ footer .menu li a:hover {
 } 
 
 .btn-filled:hover {
+    color: #fff;
+    border: 2px solid $primary-dark;
     background: $primary-dark;
 } 
 
@@ -2843,8 +2845,34 @@ nav#menu span.fa.fa-bars:hover {
 } 
 
 .carousel-post {
-    margin-right: 15px;
+    transform: scale(0.8);
+    opacity:0.4;
+    transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    z-index: -1;
+}
+
+.owl-item {
+    position: relative;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0x) scale(1.0, 1.0);
+    z-index: -1 !important;
 } 
+
+.owl-active {
+    z-index: 99999 !important;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+}
+
+.owl-active > .carousel-post {
+    transform: scale(1) !important;
+    opacity: 1;
+    margin: 0 -15%;
+    z-index:9999 !important;
+}
 
 .carousel-post h5 {
     margin-top: 20px;
@@ -4513,4 +4541,3 @@ img {
     text-transform: uppercase;
     margin: 0 0 20px 0;
 } 
-
