@@ -32,23 +32,44 @@
      
 
       $('#posts-carousel-3col').owlCarousel({
+        stagePadding: 200,
         navigation : true,
-          
-        items : 4,
-        itemsDesktop : [1199,3],
-        itemsDesktopSmall : [979,3],
-        afterAction: function(el){
-          //remove class active
-          this
-          .$owlItems
-          .removeClass('owl-active')
-       
-          //add class active
-          this
-          .$owlItems //owl internal $ object containing items
-          .eq(this.currentItem + 1)
-          .addClass('owl-active')    
-           } 
+        loop: true,
+        center: true,
+        items : 1,
+        responsive:{
+          0:{
+              items:1,
+              stagePadding: 100
+          },
+          600:{
+              items:1,
+              stagePadding: 200
+          },
+          1000:{
+              items: 1,
+              stagePadding: 200
+          },
+          1200:{
+              items: 2,
+              stagePadding: 250
+          },
+          1400:{
+              items: 3,
+              stagePadding: 200
+          },
+          1600:{
+              items:3,
+              stagePadding: 200
+          },
+          1800:{
+              items:3,
+              stagePadding: 250
+          }
+      }
+      });
+      $( window ).resize(function() {
+        $( "#log" ).append( "<div>Handler for .resize() called.</div>" );
       });
 
       $('#posts-carousel-3col').find('.owl-prev').html('<i class="fa fa-angle-left"></i>');

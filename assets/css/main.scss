@@ -6,7 +6,7 @@
 @import 'jasny-bootstrap.min';
 @import 'maps';
 @import 'owl.carousel';
-@import 'owl.theme';
+@import 'owl.theme.default';
 @import 'responsive';
 @import 'scrolling-nav';
 @import url("https://fonts.googleapis.com/css?family=Rubik:400,700|Montserrat:700");
@@ -2852,6 +2852,10 @@ nav#menu span.fa.fa-bars:hover {
     -webkit-transition: all 0.4s ease-in-out;
     -o-transition: all 0.4s ease-in-out;
     z-index: -1;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin:30px;
 }
 
 .owl-item {
@@ -2859,6 +2863,7 @@ nav#menu span.fa.fa-bars:hover {
     -webkit-backface-visibility: hidden;
     -webkit-transform: translateZ(0x) scale(1.0, 1.0);
     z-index: -1 !important;
+    padding:30px;
 } 
 
 .owl-active {
@@ -2867,10 +2872,10 @@ nav#menu span.fa.fa-bars:hover {
     -webkit-transform: translateZ(0) scale(1.0, 1.0);
 }
 
-.owl-active > .carousel-post {
+.active > .carousel-post {
     transform: scale(1) !important;
     opacity: 1;
-    margin: 0 -15%;
+    margin: 0;
     z-index:9999 !important;
 }
 
