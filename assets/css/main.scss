@@ -374,6 +374,18 @@ strong {
 } 
 
 
+.section-break-1 {
+    margin-top: 5rem;
+}
+
+.section-break-2 {
+    margin-top: 10rem;
+}
+
+.section-break-3 {
+    margin-top: 15rem;
+}
+
 .section-title {
     font-size: 28px;
 }
@@ -2959,8 +2971,8 @@ nav#menu span.fa.fa-bars:hover {
 } 
 
 .contact-form .form-control {
-    background: transparent;
-    padding: 15px 25px 15px 50px;
+    background: transparent !important;
+    padding: 15px 25px 15px 50px !important;
     color: $text-default;
 } 
 
@@ -3064,13 +3076,6 @@ address i {
     border-color: $primary;
 } 
 
-.form-group input {
-    font: normal normal normal 14px/1 FontAwesome, "Rubik", sans-serif;
-} 
-
-.input-group input {
-    font: normal normal normal 14px/1 FontAwesome, "Rubik", sans-serif;
-} 
 
 #contactForm .form-control {
     color: $text-default;
