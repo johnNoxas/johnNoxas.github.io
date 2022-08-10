@@ -245,30 +245,30 @@ strong {
     color: #fff;
 } 
 
-#header {
+#hero {
     background-image: url(/assets/images/bg/hero-1-bg.jpg);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
-    background-position: contain;
+    background-position: center;
 }
 
-#header .content{
+#hero .content{
     height:100vh;
     display: flex;
     align-items: center;
 }
 
-#header .header-title {
+#hero .hero-title {
     color: #fff;
 } 
 
-#header .header-text {
+#hero .hero-text {
     color: #fff;
     line-height: 1.5;
 } 
 
-#header p.caption {
+#hero p.caption {
     padding: 6px;
     color: $text-default;
 } 
@@ -372,7 +372,6 @@ strong {
 .header-style-3 .hero-content-v2 p {
     color: #fff;
 } 
-
 
 .section-break-1 {
     margin-top: 5rem;
@@ -1205,8 +1204,8 @@ footer .menu li a:hover {
 .navbar-light .navbar-nav > .active > a,
 .navbar-light .navbar-nav > .active > a:focus,
 .navbar-light .navbar-nav > .active > a:hover {
-    color: $primary;
-    background-color: transparent;
+    color: $primary !important;
+    background-color: transparent !important;
 } 
 
 .navbar-light .navbar-nav > .open > a,
@@ -4059,8 +4058,10 @@ ul.nav-tabs li a {
 
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
-    color: $primary;
+    color: $primary !important;
 } 
+
+
 
 .nav-tabs {
     border-bottom: none;
