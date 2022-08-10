@@ -33,7 +33,8 @@
 
       $('#posts-carousel-3col').owlCarousel({
         stagePadding: 200,
-        navigation : true,
+        nav : true,
+        navText:["<div class='nav-btn prev-slide'></div>", "<div class='nav-btn next-slide'></div>"],
         loop: true,
         center: true,
         items : 1,
@@ -68,18 +69,16 @@
           }
       }
       });
+
       $( window ).resize(function() {
         $( "#log" ).append( "<div>Handler for .resize() called.</div>" );
       });
-
-      $('#posts-carousel-3col').find('.owl-prev').html('<i class="fa fa-angle-left"></i>');
-      $('#posts-carousel-3col').find('.owl-next').html('<i class="fa fa-angle-right"></i>'); 
   
       $('#image-slider').owlCarousel({     
           navigation : true, // Show next and prev buttons
           slideSpeed : 300,
           paginationSpeed : 400,
-          singleItem:true     
+          singleItem: true     
       });   
       $('#image-slider').find('.owl-prev').html('<i class="fa fa-angle-left"></i>');
       $('#image-slider').find('.owl-next').html('<i class="fa fa-angle-right"></i>');

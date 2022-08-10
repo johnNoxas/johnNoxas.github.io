@@ -261,11 +261,13 @@ strong {
 
 #hero .hero-title {
     color: #fff;
+    font-size: 72px;
 } 
 
 #hero .hero-text {
     color: #fff;
     line-height: 1.5;
+    font-size:24px;
 } 
 
 #hero p.caption {
@@ -2026,31 +2028,6 @@ nav#menu span.fa.fa-bars:hover {
 #single-testimonial-item .owl-controls .owl-buttons div.owl-next {
     float: right !important;
     margin-right: -45px;
-} 
-
-.owl-theme .owl-buttons div {
-    width: 40px;
-    height: 40px;
-    display: block !important;
-    background: transparent !important;
-    text-align: center;
-    display: inline-block;
-    opacity: 1 !important;
-    border-radius: 0 !important;
-    transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
-} 
-
-.owl-theme .owl-buttons div:hover {
-    opacity: 0.8 !important;
-} 
-
-.owl-theme .owl-buttons div i {
-    color: #fff;
-    font-size: 16px;
-    line-height: 32px;
 } 
 
 .single-testimonial-area {
