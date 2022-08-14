@@ -2,7 +2,7 @@
 layout: post
 category : lessons
 tagline: "How to test your Jekyll site locally"
-tags : [intro, beginner, jekyll, tutorial]
+tags : [intro, beginner, jekyll, tutorial, front]
 img : helium-theme-post.jpg
 img-mobile : 
 img2 : 

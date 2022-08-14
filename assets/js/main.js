@@ -32,12 +32,14 @@
      
 
       $('#posts-carousel-3col').owlCarousel({
-        nav : true,
-        navText:["<div class='nav-btn prev-slide'><i class='fa-solid fa-caret-left'></i></div>", 
-        "<div class='nav-btn next-slide'><i class='fa-solid fa-caret-right'></i></div>"],
-        loop: true,
-        center: true,
-        items : 1,
+        loop:true,
+        margin:10,
+        dots:false,
+        nav:true,
+        center:true,
+        autoplay:true,   
+        smartSpeed: 1000, 
+        autoplayTimeout: 7000,
         responsive:{
           0:{
               items: 1,
@@ -52,13 +54,9 @@
               items: 3,
           },
           1200:{
-              items: 4,
+              items: 3,
           }
       }
-      });
-
-      $( window ).resize(function() {
-        $( "#log" ).append( "<div>Handler for .resize() called.</div>" );
       });
   
       $('#image-slider').owlCarousel({     

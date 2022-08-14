@@ -2,7 +2,7 @@
 layout: post
 category : lessons
 tagline: "Using heliumjk.github.io"
-tags : [bootstrap 4, web desing, jekyll]
+tags : [bootstrap 4, web desing, jekyll, front]
 img : helium-jekyll.jpg
 img-mobile : 
 img2 : 

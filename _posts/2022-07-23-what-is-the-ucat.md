@@ -2,7 +2,7 @@
 layout: post
 category:
 tagline: "Sex"
-tags : [intro, beginner, jekyll, tutorial]
+tags : [intro, beginner, jekyll, tutorial, front]
 img : helloworld.jpg
 img-mobile :
 img2 :

@@ -225,7 +225,7 @@ canonical: https://heliumjk.github.io
     <!-- END PRICING -->
 
     <!-- POST CAROUSEL -->
-    <section id="blog">
+    <section id="blog" class="blog-section">
         <div class="section-break-1"></div>
         <div class="container">
             <h2 class="text-center mb-4">Read our based blog posts</h4>
@@ -233,56 +233,29 @@ canonical: https://heliumjk.github.io
                 Our blog is full of strategies and stories about the exam, as well as advice from our tutors. Our goal is to pass on the information we wish when we first began preparing for the UCAT. Most of this content is free, and we really believe it's a great place for students to start their research.
             </p><br>
         </div>
-        <div id="posts-carousel-3col" class="owl-carousel">
-            <div class="blog block carousel-post text-center">
-                <img class="card-image-top" src="{{ BASE_PATH }}/assets/images/slider/blog/img6.jpg" alt="">
-                <div class="card-body">
-                    <h5>Blog Title</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet atque fugit vitae voluptatem...</p>
-                    <a href="#">Full Article <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+        <div class="blog-content">
+            <div id="posts-carousel-3col" class="owl-carousel">
+                {% for post in site.posts %}
+                {% if post.tags contains "front" %}
+                <div class="blog_item">
+                    <div class="blog_image">
+                        <img class="img-fluid" src="{{ BASE_PATH }}/assets/images/{{ post.img }}" alt="images not found">
+                        <span><i class="icon ion-md-create"></i></span>
+                    </div>
+                    <div class="blog_details">
+                        <div class="blog_title">
+                            <h5><a href="#">{{ post.title }}</a></h5>
+                        </div>
+                        <ul>
+                            <li><i class="icon ion-md-person"></i>{{post.author}}</li>
+                            <li><i class="icon ion-md-calendar"></i>{{post.date}}</li>
+                        </ul>
+                        <p>{{post.excerpt | strip_html}}</p>
+                        <a href="#">Read More<i class="icofont-long-arrow-right"></i></a>
+                    </div>
                 </div>
-            </div>
-
-            <div class="blog block carousel-post text-center">
-                <img src="{{ BASE_PATH }}/assets/images/slider/blog/img5.jpg" alt="">
-                <h5>Blog Title</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet atque fugit vitae voluptatem...</p>
-                <a href="#">Full Article <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-            </div>
-
-            <div class="blog block carousel-post text-center">
-                <img src="{{ BASE_PATH }}/assets/images/slider/blog/img4.jpg" alt="">
-                <h5>Blog Title</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet atque fugit vitae voluptatem...</p>
-                <a href="#">Full Article <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-            </div>
-
-            <div class="blog block carousel-post text-center">
-                <img src="{{ BASE_PATH }}/assets/images/slider/blog/img3.jpg" alt="">
-                <h5>Blog Title</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet atque fugit vitae voluptatem...</p>
-                <a href="#">Full Article <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-            </div>
-
-            <div class="blog block carousel-post text-center">
-                <img src="{{ BASE_PATH }}/assets/images/slider/blog/img2.jpg" alt="">
-                <h5>Blog Title</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet atque fugit vitae voluptatem...</p>
-                <a href="#">Full Article <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-            </div>
-
-            <div class="blog block carousel-post text-center">
-                <img src="{{ BASE_PATH }}/assets/images/slider/blog/img1.jpg" alt="">
-                <h5>Blog Title</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet atque fugit vitae voluptatem...</p>
-                <a href="#">Full Article <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-            </div>
-
-            <div class="blog block carousel-post text-center">
-                <img src="{{ BASE_PATH }}/assets/images/slider/blog/img1.jpg" alt="">
-                <h5>Blog Title</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet atque fugit vitae voluptatem...</p>
-                <a href="#">Full Article <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
         <div class="section-break-1"></div>
