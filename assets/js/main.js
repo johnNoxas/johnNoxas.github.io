@@ -32,7 +32,6 @@
      
 
       $('#posts-carousel-3col').owlCarousel({
-        stagePadding: 200,
         nav : true,
         navText:["<div class='nav-btn prev-slide'><i class='fa-solid fa-caret-left'></i></div>", 
         "<div class='nav-btn next-slide'><i class='fa-solid fa-caret-right'></i></div>"],
@@ -42,23 +41,18 @@
         responsive:{
           0:{
               items: 1,
-              stagePadding: 50
           },
           576:{
               items: 1,
-              stagePadding: ($(window).width() - 576)/2
           },
           768:{
               items: 2,
-              stagePadding: ($(window).width() - 768)/2
           },
           992:{
               items: 3,
-              stagePadding: ($(window).width() - 992)/2
           },
           1200:{
-              items: 3,
-              stagePadding: ($(window).width() - 1200)/2
+              items: 4,
           }
       }
       });
