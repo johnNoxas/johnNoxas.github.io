@@ -10,9 +10,8 @@
 <div class="blog-block categories-sidebar-widget">
     <h4>Categories</h4>
     {% for category in site.categories %}
-    <li><a href="{{category.url}}"><strong>{{category|first}}</strong></a></li>
     <div class="post-category">
-        <a href="{{category.url}}">{{category[0]}}<span class="pull-right">({{category[1].size}})</span></a>
+        <a href="{{category.url}}">{{category[0]}}<span class="float-right">({{category[1].size}})</span></a>
     </div>
     {% endfor %}
 </div>
@@ -26,7 +25,7 @@
     <div class="blog-posts-small">
         {% for post in site.related_posts%}
             <div class="blog-post-small first-post">
-            <img src="{{ BASE_PATH }}/assets/images/{{ post.img }}" alt="{{ post.title }} image">
+            <img src="{{ BASE_PATH }}/assets/images/{{ post.img }}">
             <a href="{{ BASE_PATH }}{{ post.url }}">{{post.title}}</a>
             <p>Posted on <a href="#" class="post-date">
                 {% assign d = post.date | date: "%d" | plus:'0' %}

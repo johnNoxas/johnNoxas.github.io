@@ -247,7 +247,8 @@ strong {
 } 
 
 #hero {
-    background-image: url(/assets/images/bg/hero-1-bg.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/bg/hero-1-bg.jpg);
+    background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -255,6 +256,7 @@ strong {
 }
 
 #hero .content{
+
     height:100vh;
     display: flex;
     align-items: center;
@@ -340,7 +342,7 @@ strong {
 } 
 
 .header-style-2 {
-    background: #f4f6f9;
+    background: $post-header-default;
     padding-top: 80px;
 } 
 
@@ -2527,6 +2529,8 @@ nav#menu span.fa.fa-bars:hover {
 .blog-post-small a {
     color: #999;
     font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 } 
 
 .blog-post-small p {
