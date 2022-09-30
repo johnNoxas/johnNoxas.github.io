@@ -1,0 +1,45 @@
+<div class="blog-block about-sidebar-widget">
+    <img src="{{ BASE_PATH }}/assets/images/{{ site.author.image }}">
+    <h4><a href="{{ site.author.site }}">{{ site.author.name }}</a></h4>
+    <p>{{ site.author.description }}</p>
+    {% include social-block.html %}
+  </div>
+
+<div class="mb-60"></div>
+
+<div class="blog-block categories-sidebar-widget">
+    <h4>Categories</h4>
+    {% for category in site.categories %}
+    <li><a href="{{category.url}}"><strong>{{category|first}}</strong></a></li>
+    <div class="post-category">
+        <a href="{{category.url}}">{{category[0]}}<span class="pull-right">({{category[1].size}})</span></a>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="mb-60"></div>
+
+<div class="blog-block blog-posts-widget">
+    <div class="widget-title">
+        <h4>Related Posts</h4>
+    </div>
+    <div class="blog-posts-small">
+        {% for post in site.related_posts%}
+            <div class="blog-post-small first-post">
+            <img src="{{ BASE_PATH }}/assets/images/{{ post.img }}" alt="{{ post.title }} image">
+            <a href="{{ BASE_PATH }}{{ post.url }}">{{post.title}}</a>
+            <p>Posted on <a href="#" class="post-date">
+                {% assign d = post.date | date: "%d" | plus:'0' %}
+                {{ post.date | date: "%B" }} 
+                {% case d %}
+                    {% when 1 or 21 or 31 %}{{ d }}st
+                    {% when 2 or 22 %}{{ d }}nd
+                    {% when 3 or 23 %}{{ d }}rd
+                    {% else %}{{ d }}th
+                    {% endcase %}, 
+                {{ post.date | date: "%Y" }}
+            </a></p>
+            </div>
+        {% endfor %}
+    </div>
+</div>

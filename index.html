@@ -129,13 +129,13 @@ canonical: https://heliumjk.github.io
             </div>
         </div>
     </div>
-    <div class="section-break-2"></div>     
+    <div class="section-break-3"></div>     
     </section>
     <!-- END ABOUT UCAT -->
 
     <!-- ABOUT GAMSAT -->
     <section id="gamsat-info">
-    <div class="section-break-2"></div>   
+    <div class="section-break-3"></div>   
     <div class="container">
         <div class="d-flex row my-5">
             <div class="order-1 order-md-2 col-12 col-md-6 d-flex align-items-center animated" data-animation="fadeInLeft">
@@ -171,14 +171,39 @@ canonical: https://heliumjk.github.io
                 We offer a variety of tutoring programs to suit all current skill levels and budgets.
             </p>
             <div class="row justify-content-center">
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="pricing-table-block">
+                    <div class="plan-name">
+                    <h3>Group of 4</h3>
+                    </div>
+                    <div class="plan-price">
+                    <div class="price-value">$ 50</div>
+                    <div class="interval">per lesson</div>
+                    </div>
+                    <div class="plan-list">
+                    <ul>
+                        <li><i class="fa fa-check"></i>4 Students</li>
+                        <li><i class="fa fa-check"></i>Great for friends</li>
+                        <li><i class="fa fa-check"></i>Comprehensive Curriculum</li>
+                        <li><i class="fa fa-check"></i></li>
+                        <li><i class="fa fa-check"></i></li>
+                    </ul>
+                    </div>
+                    <div class="plan-signup">
+                    <a href="#" class="btn btn-common">Download</a>
+                    </div>
+                </div>
+                </div>
+            
             <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="pricing-table-block">
                   <div class="plan-name">
-                    <h3>Free</h3>
+                    <h3>Small Group</h3>
                   </div>
                   <div class="plan-price">
-                    <div class="price-value">$ 00</div>
-                    <div class="interval">per month</div>
+                    <div class="price-value">$ 60</div>
+                    <div class="interval">per lesson</div>
                   </div>
                   <div class="plan-list">
                     <ul>
@@ -201,8 +226,8 @@ canonical: https://heliumjk.github.io
                     <h3>Premium</h3>
                   </div>
                   <div class="plan-price">
-                    <div class="price-value">$ 69 </div>
-                    <div class="interval">per month</div>
+                    <div class="price-value">$ 80 </div>
+                    <div class="interval">per lesson</div>
                   </div>
                   <div class="plan-list">
                     <ul>
@@ -248,7 +273,17 @@ canonical: https://heliumjk.github.io
                         </div>
                         <ul>
                             <li><i class="icon ion-md-person"></i>{{post.author}}</li>
-                            <li><i class="icon ion-md-calendar"></i>{{post.date}}</li>
+                            <li><i class="icon ion-md-calendar"></i>
+                                {% assign d = post.date | date: "%d" | plus:'0' %}
+                                {{ post.date | date: "%B" }} 
+                                {% case d %}
+                                    {% when 1 or 21 or 31 %}{{ d }}st
+                                    {% when 2 or 22 %}{{ d }}nd
+                                    {% when 3 or 23 %}{{ d }}rd
+                                    {% else %}{{ d }}th
+                                    {% endcase %}, 
+                                {{ post.date | date: "%Y" }}
+                            </li>
                         </ul>
                         <p>{{post.excerpt | strip_html}}</p>
                         <a href="#">Read More<i class="icofont-long-arrow-right"></i></a>

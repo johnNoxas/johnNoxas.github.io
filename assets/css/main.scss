@@ -2541,6 +2541,30 @@ nav#menu span.fa.fa-bars:hover {
     border: none;
 } 
 
+.blog-block .blog-image {
+    overflow: hidden;
+    padding: 0;
+}
+
+.blog-block .blog-image img {
+    object-fit: cover;
+    height: 100%;
+    transform: scale(1.0);
+    transition: transform 0.5s ease-in-out;
+    -moz-transition: transform 0.5s ease-in-out;
+    -webkit-transition: transform 0.5s ease-in-out;
+    -o-transition: transform 0.5s ease-in-out;
+}
+
+.blog-block:hover .blog-image img {
+    transform: scale(1.2) !important;
+}
+
+.blog-block .block-post {
+    padding: 0 3rem 0 3rem;
+}
+
+
 .progress {
     height: 15px;
     margin-bottom: 20px;
