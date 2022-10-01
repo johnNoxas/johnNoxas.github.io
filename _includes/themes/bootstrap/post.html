@@ -1,33 +1,26 @@
 <!-- Post header -->
       <div class="header-style-2">
+        <div class="header-image" style="{% if page.img %} background-image: url('{{ BASE_PATH }}/assets/images/{{ page.img }}') {% endif %}">
+          <div class="header-overlay"></div>
+        </div>
         <div class="container">
-          <div class="row">
-            <div class="col-xs-12 col-sm-6">
-              <div class="hero-content-v2" style="margin-top:10px!important;">
-                <h3><strong>{{ page.title }}</strong></h3>
-                {% if page.tagline %}<p class="lead">
-                          {{ page.tagline }}
-                </p>{% endif %}
-                <p>Posted on <a href="#" class="post-date">
-                  {% assign d = page.date | date: "%d" | plus:'0' %}
-                  {{ page.date | date: "%B" }} 
-                  {% case d %}
-                      {% when 1 or 21 or 31 %}{{ d }}st
-                      {% when 2 or 22 %}{{ d }}nd
-                      {% when 3 or 23 %}{{ d }}rd
-                      {% else %}{{ d }}th
-                      {% endcase %}, 
-                  {{ page.date | date: "%Y" }}
-              </a></p>
-                <div class="mb-60"></div>                      
-              </div>
+            <div class="hero-content-v2">
+              <h3><strong>{{ page.title }}</strong></h3>
+              {% if page.tagline %}<p class="lead">
+                        {{ page.tagline }}
+              </p>{% endif %}
+              <p>Posted on
+                {% assign d = page.date | date: "%d" | plus:'0' %}
+                {{ page.date | date: "%B" }}
+                {% case d %}
+                    {% when 1 or 21 or 31 %}{{ d }}st
+                    {% when 2 or 22 %}{{ d }}nd
+                    {% when 3 or 23 %}{{ d }}rd
+                    {% else %}{{ d }}th
+                    {% endcase %}, 
+                {{ page.date | date: "%Y" }}
+                </p>                   
             </div>
-            <div class="col-xs-12 col-sm-6">
-              {% if page.img %}<figure>
-                <img src="{{ BASE_PATH }}/assets/images/{{ page.img }}" alt="">
-              </figure>{% endif %}
-            </div>
-          </div>
         </div>
       </div>
 

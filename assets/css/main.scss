@@ -342,18 +342,43 @@ strong {
 } 
 
 .header-style-2 {
-    background: $post-header-default;
-    padding-top: 80px;
+    padding: 40px 0 40px 0;
+    position:relative;
 } 
 
+.header-style-2 .header-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header-style-2 .header-image .header-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .hero-content-v2 {
-    margin-top: 144px;
+    margin: 100px 0 60px 0;
+    position:relative;
 } 
 
 .hero-content-v2 h3 {
     font-size: 24px;
-    color: #2f3542;
+    color: #fff;
     font-weight: 400;
+} 
+
+.hero-content-v2 p {
+    color: #fff;
 } 
 
 .hero-content-v2 h3 strong {

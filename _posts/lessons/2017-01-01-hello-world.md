@@ -15,6 +15,8 @@ js:
 bgcolor: ff5a71
 keywords: helium, html, css, landing page, jekyll, ruby, web marketing, advertising
 canonical: https://heliumjk.github.io
+categories: 
+    - "ucat"
 ---
 {% include JB/setup %}
 Hello world! Is the first post on helium jekyll

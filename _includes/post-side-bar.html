@@ -11,7 +11,7 @@
     <h4>Categories</h4>
     {% for category in site.categories %}
     <div class="post-category">
-        <a href="{{category.url}}">{{category[0]}}<span class="float-right">({{category[1].size}})</span></a>
+        <a href="{{BASE_PATH}}/blog/{{category[0]}}">{{category[0]}}<span class="float-right">({{category[1].size}})</span></a>
     </div>
     {% endfor %}
 </div>

@@ -1,6 +1,5 @@
 ---
 layout: post
-category:
 tagline: "Sex"
 tags : [intro, beginner, jekyll, tutorial, front]
 img : helloworld.jpg
