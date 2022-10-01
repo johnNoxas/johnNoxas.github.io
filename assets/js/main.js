@@ -84,6 +84,7 @@
         $('.animated').waypoint({
           handler: function() {
               $(this.element).addClass(this.element.dataset.animation);
+              $(this.element).css("animation-delay",this.element.dataset.animation_delay)
           },
           offset: '50%',
 

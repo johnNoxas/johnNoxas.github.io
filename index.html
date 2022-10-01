@@ -59,11 +59,11 @@ canonical: https://heliumjk.github.io
     <section id="services">
     <div class="section-break-1"></div> 
         <div class="container">
-            <h2 class="section-title mt-0 mb-5 text-center">What we offer?</h2>
+            <h2 class="section-title mt-0 mb-5 text-center animated" data-animation="fadeInDown">What We Do</h2>
             <div class="row">
             <!-- card -->
             <div class="col-md-4">
-                <div class="card rounded-lg shadow overflow-hidden">
+                <div class="card rounded-lg shadow overflow-hidden animated" data-animation="fadeInUp">
                     <img class="card-img-top" src="{{ BASE_PATH }}/assets/images/card/img-05.jpg" alt="">
                     <div class="card-block text-center">
                         <h3 class="card-title">Private Tutoring</h3>
@@ -76,7 +76,7 @@ canonical: https://heliumjk.github.io
 
             <!-- card -->
             <div class="col-md-4">
-                <div class="card rounded-lg shadow overflow-hidden">
+                <div class="card rounded-lg shadow overflow-hidden animated" data-animation="fadeInUp" data-animation_delay="200ms">
                     <img class="card-img-top" src="{{ BASE_PATH }}/assets/images/card/img-06.jpg" alt="">
                     <div class="card-block text-center">
                         <h3 class="card-title">Small Group Tutoring</h3>
@@ -89,7 +89,7 @@ canonical: https://heliumjk.github.io
 
             <!-- card -->
             <div class="col-md-4">
-                <div class="card rounded-lg shadow overflow-hidden">
+                <div class="card rounded-lg shadow overflow-hidden animated" data-animation="fadeInUp" data-animation_delay="400ms">
                     <img class="card-img-top" src="{{ BASE_PATH }}/assets/images/card/img-07.jpg" alt="">
                     <div class="card-block text-center">
                         <h3 class="card-title">Free Resources</h3>
@@ -166,14 +166,14 @@ canonical: https://heliumjk.github.io
     <section id="pricing">
         <div class="section-break-2"></div>
         <div class="container">
-            <h1 class="text-center mt-0">Our Price</h1>
-            <p class="lead text-center">
+            <h1 class="text-center mt-0 animated" data-animation="fadeInDown" >Our Price</h1>
+            <p class="lead text-center animated" data-animation="fadeInUp" data-animation_delay="100ms">
                 We offer a variety of tutoring programs to suit all current skill levels and budgets.
             </p>
             <div class="row justify-content-center">
 
             <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="pricing-table-block">
+                <div class="pricing-table-block animated" data-animation="fadeInUp">
                     <div class="plan-name">
                     <h3>Group of 4</h3>
                     </div>
@@ -197,7 +197,7 @@ canonical: https://heliumjk.github.io
                 </div>
             
             <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="pricing-table-block">
+                <div class="pricing-table-block animated" data-animation="fadeInUp" data-animation_delay="200ms">
                   <div class="plan-name">
                     <h3>Small Group</h3>
                   </div>
@@ -221,7 +221,7 @@ canonical: https://heliumjk.github.io
               </div>
     
               <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="pricing-table-block">
+                <div class="pricing-table-block animated" data-animation="fadeInUp" data-animation_delay="400ms">
                   <div class="plan-name">
                     <h3>Premium</h3>
                   </div>
@@ -253,23 +253,23 @@ canonical: https://heliumjk.github.io
     <section id="blog" class="blog-section">
         <div class="section-break-1"></div>
         <div class="container">
-            <h2 class="text-center mb-4">Read our based blog posts</h4>
-            <p class="lead">
+            <h2 class="text-center mb-4 animated" data-animation="fadeInDown">Read our based blog posts</h4>
+            <p class="lead animated" data-animation="fadeInUp" data-animation_delay="100ms">
                 Our blog is full of strategies and stories about the exam, as well as advice from our tutors. Our goal is to pass on the information we wish when we first began preparing for the UCAT. Most of this content is free, and we really believe it's a great place for students to start their research.
             </p><br>
         </div>
-        <div class="blog-content">
+        <div class="blog-content animated" data-animation="fadeInUp" data-animation_delay="200ms">
             <div id="posts-carousel-3col" class="owl-carousel">
                 {% for post in site.posts %}
                 {% if post.tags contains "front" %}
                 <div class="blog_item">
                     <div class="blog_image">
-                        <img class="img-fluid" src="{{ BASE_PATH }}/assets/images/{{ post.img }}" alt="images not found">
+                        <img class="img-fluid" src="{{ BASE_PATH }}/assets/images/{{ post.img }}" alt="image not found">
                         <span><i class="icon ion-md-create"></i></span>
                     </div>
                     <div class="blog_details">
                         <div class="blog_title">
-                            <h5><a href="#">{{ post.title }}</a></h5>
+                            <h5><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h5>
                         </div>
                         <ul>
                             <li><i class="icon ion-md-person"></i>{{post.author}}</li>
@@ -286,7 +286,7 @@ canonical: https://heliumjk.github.io
                             </li>
                         </ul>
                         <p>{{post.excerpt | strip_html}}</p>
-                        <a href="#">Read More<i class="icofont-long-arrow-right"></i></a>
+                        <a href="{{ BASE_PATH }}{{ post.url }}">Read More<i class="icofont-long-arrow-right"></i></a>
                     </div>
                 </div>
                 {% endif %}
