@@ -14,15 +14,22 @@ permalink: /blog/
 
 
 {% for post in site.posts %}
-	  <div class="blog-block post-content-area row">
-      <div class="blog-image col-md-6 col-sm-12">
-        <img src="{{ BASE_PATH }}/assets/images/{{ post.img }}" alt="{{ post.title }} image">
-      </div>    
-      <div class="blog-post col-md-6 col-sm-12">
-          <h3><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h3>
-	      <p>{{ post.excerpt }}</p>
-          <a class="btn btn-common" href="{{ BASE_PATH }}{{ post.url }}">Read More</a>
+	  <div class="blog-block post-content-area">
+      <div class="row">
+        <div class="col-md-6 col-sm-12 p-0 blog-image-wrap">
+          <div class="blog-image">
+            <img src="{{ BASE_PATH }}/assets/images/{{ post.img }}" alt="{{ post.title }} image">
+          </div>
+        </div>    
+        <div class="col-md-6 col-sm-12 p-0">
+          <div class="d-flex align-items-center blog-post-wrap">
+            <div class="blog-post">
+              <h3><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h3>
+              <p>{{ post.excerpt }}</p>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 	  <div class="mb-60"></div>
 {% endfor %}

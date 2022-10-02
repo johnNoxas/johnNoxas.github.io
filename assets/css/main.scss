@@ -400,9 +400,9 @@ strong {
 
 #post .container .row {
     background-color: $white;
-    padding-top: 60px;
+    padding-top: 40px;
     padding-bottom: 60px;
-    margin-top:-100px;
+    margin-top: -100px;
     position: relative;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;;
 }
@@ -2484,37 +2484,64 @@ nav#menu span.fa.fa-bars:hover {
 
 .blog-block {
     box-shadow: 0px 1px 4px #ddd;
+    transition: box-shadow 0.5s ease-in-out;
+    -moz-transition: box-shadow 0.5s ease-in-out;
+    -webkit-transition: box-shadow 0.5s ease-in-out;
+    -o-transition: box-shadow 0.5s ease-in-out;
 } 
 
-.blog-block .blog-content {
-    padding: 15px;
-} 
+.blog-block:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 
-.blog-block .blog-content h3 {
-    font-size: 18px;
-} 
+@include media-breakpoint-up(md) {
+    .blog-block .blog-post-wrap {
+        height:300px;
+    }
+}
 
-.blog-block .blog-content h3 a {
-    color: $text-default;
-} 
+.blog-block .blog-image {
+    overflow: hidden;
+    height:100%;
+    padding: 0;
+}
 
-.blog-block .blog-content h3 a:hover {
-    color: $primary;
-} 
+.blog-block .blog-image img {
+    object-fit: cover;
+    height: 100%;
+    transform: scale(1.0);
+    transition: transform 0.5s ease-in-out;
+    -moz-transition: transform 0.5s ease-in-out;
+    -webkit-transition: transform 0.5s ease-in-out;
+    -o-transition: transform 0.5s ease-in-out;
+}
 
-.blog-post {
-    padding: 30px;
-} 
+.blog-block:hover .blog-image img {
+    transform: scale(1.2) !important;
+}
+
+.blog-block .blog-post-wrap {
+    background-color: $white;
+}
+
+.blog-block .blog-post {
+    padding: 2rem;
+}
 
 .blog-post h3 {
-    font-size: 18px;
+    font-size: 24px;
 } 
 
 .blog-post h3 a {
     color: $text-default;
 } 
 
-.blog-post h3 a:hover {
+.blog-post p {
+    font-size: 18px;
+    color: $text-light;
+} 
+
+.blog-block:hover h3 a {
     color: $primary;
 } 
 
@@ -2587,30 +2614,6 @@ nav#menu span.fa.fa-bars:hover {
 .blog-post-small:last-child {
     border: none;
 } 
-
-.blog-block .blog-image {
-    overflow: hidden;
-    padding: 0;
-}
-
-.blog-block .blog-image img {
-    object-fit: cover;
-    height: 100%;
-    transform: scale(1.0);
-    transition: transform 0.5s ease-in-out;
-    -moz-transition: transform 0.5s ease-in-out;
-    -webkit-transition: transform 0.5s ease-in-out;
-    -o-transition: transform 0.5s ease-in-out;
-}
-
-.blog-block:hover .blog-image img {
-    transform: scale(1.2) !important;
-}
-
-.blog-block .block-post {
-    padding: 0 3rem 0 3rem;
-}
-
 
 .progress {
     height: 15px;
