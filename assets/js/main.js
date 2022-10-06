@@ -84,7 +84,7 @@
 
         // Animations
         $('.animated').css({
-            'opacity': 0
+            'opacity': 0,
             'animation-delay': this.dataset.animation_delay
         });
         $('.animated').waypoint({
