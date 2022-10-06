@@ -85,25 +85,28 @@
         // Animations
         $('.animated').css({
             'opacity': 0,
-            'animation-delay': this.dataset.animation_delay
         });
+        
+
+
         $('.animated').waypoint({
             handler: function(direction) {
                 var exit_animation = this.element.dataset.animation.replace('In','Out');
                 if(direction === 'down'){
                     $(this.element).addClass(this.element.dataset.animation);
                     $(this.element).removeClass(exit_animation);
+                    console.log('here');
                 } else if (direction === 'up') {
                     var exit_animation = this.element.dataset.animation.replace('In','Out');
                     $(this.element).addClass(exit_animation);
                     $(this.element).removeClass(this.element.dataset.animation);
                 }
             },
-          offset: '75%',
+            offset: '66%',
         });
     });
 
-    $('body').on('scroll', function(){Waypoint.refreshAll();});
+
 
 
     
