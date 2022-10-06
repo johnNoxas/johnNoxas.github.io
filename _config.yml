@@ -157,6 +157,8 @@ sass:
 collections:
   category:
     output: true
+    sort_by: series_number
+  
 
 defaults:
 -

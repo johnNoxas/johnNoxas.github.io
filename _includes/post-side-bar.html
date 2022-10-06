@@ -8,37 +8,40 @@
 <div class="mb-60"></div>
 
 <div class="blog-block categories-sidebar-widget">
-    <h4>Categories</h4>
+    <h4>More Free Resources</h4>
     {% for category in site.categories %}
+        {% unless page.categories contains category[0] %}
     <div class="post-category">
         <a href="{{BASE_PATH}}/blog/{{category[0]}}">{{category[0]}}<span class="float-right">({{category[1].size}})</span></a>
     </div>
+        {% endunless %}
     {% endfor %}
 </div>
 
 <div class="mb-60"></div>
 
-<div class="blog-block blog-posts-widget">
+<div class="blog-block blog-posts-widget sticky-top">
+{% if page.series_number > 0 %}
+    <div class="widget-title">
+        <h4>In This Series</h4>
+    </div>
+    <div class="blog-posts-small">
+        {% for post in site.categories[page.series] %}
+        <div class="blog-post-small first-post">
+        <a href="{{ BASE_PATH }}{{ post.url }}" {% if post.id == page.id %} style="font-weight:bold" {% endif %}>{{post.series_number}}) {{post.title}}</a>
+        </div>
+        {% endfor %}
+    </div>
+{% else %}
     <div class="widget-title">
         <h4>Related Posts</h4>
     </div>
     <div class="blog-posts-small">
-        {% for post in site.related_posts%}
-            <div class="blog-post-small first-post">
-            <img src="{{ BASE_PATH }}/assets/images/{{ post.img }}">
-            <a href="{{ BASE_PATH }}{{ post.url }}">{{post.title}}</a>
-            <p>Posted on <a href="#" class="post-date">
-                {% assign d = post.date | date: "%d" | plus:'0' %}
-                {{ post.date | date: "%B" }} 
-                {% case d %}
-                    {% when 1 or 21 or 31 %}{{ d }}st
-                    {% when 2 or 22 %}{{ d }}nd
-                    {% when 3 or 23 %}{{ d }}rd
-                    {% else %}{{ d }}th
-                    {% endcase %}, 
-                {{ post.date | date: "%Y" }}
-            </a></p>
-            </div>
+    {% for post in site.related_posts %}
+        <div class="blog-post-small first-post">
+        <a href="{{ BASE_PATH }}{{ post.url }}">{{post.title}}</a>
+        </div>
         {% endfor %}
     </div>
+{% endif %}
 </div>

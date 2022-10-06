@@ -6,9 +6,9 @@
         <div class="container">
             <div class="hero-content-v2">
               <h3><strong>{{ page.title }}</strong></h3>
-              {% if page.tagline %}<p class="lead">
-                        {{ page.tagline }}
-              </p>{% endif %}
+              {% if page.tagline %}
+                <p class="lead">{{ page.tagline }}</p>
+              {% endif %}
               <p>Posted on
                 {% assign d = page.date | date: "%d" | plus:'0' %}
                 {{ page.date | date: "%B" }}

@@ -1,0 +1,28 @@
+---
+layout: blog
+title: Blog
+order: 4
+group: navigation
+tags : [blog, posts, post]
+author : Antonio Trento
+css: 
+js:
+keywords: bootstrap4, UI kit, jekyll
+permalink: /blog/
+---
+{% include JB/setup %}
+
+
+{% for post in site.course[page.tag] %}
+	  <div class="blog-block post-content-area row">
+      <div class="blog-image col-md-6 col-sm-12">
+        <img src="{{ BASE_PATH }}/assets/images/{{ post.img }}" alt="{{ post.title }} image">
+      </div>    
+      <div class="blog-post col-md-6 col-sm-12">
+          <h3><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h3>
+	      <p>{{ post.excerpt }}</p>
+          <a class="btn btn-common" href="{{ BASE_PATH }}{{ post.url }}">Read More</a>
+        </div>
+    </div>
+	  <div class="mb-60"></div>
+{% endfor %}

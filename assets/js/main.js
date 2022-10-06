@@ -71,8 +71,9 @@
 
       // Waypoint related things
     
-    // Make counters restart on slide
+    
     $( document ).ready(function() {
+        // Make counters restart on slide
         $('.timer').waypoint({
             handler: function() {
                 $(this.element).countTo('restart');
@@ -80,15 +81,26 @@
             offset: '100%',
 
         });
-        $('.animated').css('opacity', 0);
-        $('.animated').waypoint({
-          handler: function() {
-              $(this.element).addClass(this.element.dataset.animation);
-              $(this.element).css("animation-delay",this.element.dataset.animation_delay)
-          },
-          offset: '50%',
 
-      });
+        // Animations
+        $('.animated').css({
+            'opacity': 0
+            'animation-delay': this.dataset.animation_delay
+        });
+        $('.animated').waypoint({
+            handler: function(direction) {
+                var exit_animation = this.element.dataset.animation.replace('In','Out');
+                if(direction === 'down'){
+                    $(this.element).addClass(this.element.dataset.animation);
+                    $(this.element).removeClass(exit_animation);
+                } else if (direction === 'up') {
+                    var exit_animation = this.element.dataset.animation.replace('In','Out');
+                    $(this.element).addClass(exit_animation);
+                    $(this.element).removeClass(this.element.dataset.animation);
+                }
+            },
+          offset: '75%',
+        });
     });
 
     $('body').on('scroll', function(){Waypoint.refreshAll();});

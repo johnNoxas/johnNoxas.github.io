@@ -1,6 +1,5 @@
 ---
 layout: post
-category : lessons
 tagline: "Hello world post on helium jekyll"
 tags : [intro, beginner, jekyll, tutorial, front]
 img : helloworld.jpg
@@ -15,8 +14,10 @@ js:
 bgcolor: ff5a71
 keywords: helium, html, css, landing page, jekyll, ruby, web marketing, advertising
 canonical: https://heliumjk.github.io
+series: "ucat"
 categories: 
     - "ucat"
+number: 1
 ---
 {% include JB/setup %}
 Hello world! Is the first post on helium jekyll
