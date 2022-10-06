@@ -3748,7 +3748,7 @@ a:hover:not([href]):not([tabindex]) {
 .portfolio-item:hover .sup-link .right-link,
 .portfolio-item:hover .sup-link .left-link {
     opacity: 1;
-    webkit-transform: translateY(0px);
+    -webkit-transform: translateY(0px);
     transform: translateY(0px);
 } 
 
@@ -3944,7 +3944,7 @@ figure {
 .hovereffect:hover .icons-link .right-link,
 .hovereffect:hover .icons-link .left-link {
     opacity: 1;
-    webkit-transform: translateY(0px);
+    -webkit-transform: translateY(0px);
     transform: translateY(0px);
 } 
 
