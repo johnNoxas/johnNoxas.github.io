@@ -1,6 +1,9 @@
-<div class="blog-block blog-posts-widget sticky-top">
+<div class="blog-block blog-posts-widget course-list-widget sticky-top">
     <div class="widget-title">
-        <h4>{{page.course }}</h4>
+        <h4><a href="{{ BASE_PATH }}/courses/">
+            {% assign course = site.courses | where:"tag", page.course  | first %}
+            {{ course.title }}
+        </a></h4>
     </div>
     <div class="blog-posts-small">
         {% assign filtered_items = site.course_items | where: "course", page.course %}

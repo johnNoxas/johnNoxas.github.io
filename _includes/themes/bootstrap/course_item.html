@@ -1,0 +1,35 @@
+<!-- Post header -->
+      <div class="header-style-2">
+        {% if page.img %}
+        <div class="header-image" style="background-image: url('{{ BASE_PATH }}/assets/images/{{ page.img }}')">
+          <div class="header-overlay"></div>
+        </div>
+        {% else %}
+        <div class="header-image" style="background-color: {{ page.bgcolor }}')"></div>
+        {% endif %}
+        <div class="container">
+            <div class="hero-content-v2">
+              <h3><strong>{{ page.title }}</strong></h3>                   
+            </div>
+        </div>
+      </div>
+  
+<!-- Post content+sidebar -->
+<!-- Blog content + sidebar -->
+  <section id="post" class="blog">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-9">
+          {{ content }}
+          <div class="mb-60"></div>
+          {% include ads-block.html %}
+          <div class="mb-60"></div> 
+          {% include JB/comments %}                    
+        </div>                    
+        <div class="col-sm-12 col-md-3">
+          {% include course-item-side-bar.html %}
+        </div>
+      </div>
+     </div>
+   </section>
+

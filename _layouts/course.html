@@ -1,28 +1,26 @@
 ---
 layout: blog
-title: Blog
-order: 4
-group: navigation
-tags : [blog, posts, post]
-author : Antonio Trento
-css: 
-js:
-keywords: bootstrap4, UI kit, jekyll
-permalink: /blog/
 ---
 {% include JB/setup %}
 
-
-{% for post in site.course[page.tag] %}
-	  <div class="blog-block post-content-area row">
-      <div class="blog-image col-md-6 col-sm-12">
-        <img src="{{ BASE_PATH }}/assets/images/{{ post.img }}" alt="{{ post.title }} image">
-      </div>    
-      <div class="blog-post col-md-6 col-sm-12">
-          <h3><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h3>
-	      <p>{{ post.excerpt }}</p>
-          <a class="btn btn-common" href="{{ BASE_PATH }}{{ post.url }}">Read More</a>
+{% assign filtered_items = site.course_items | where: "course", page.tag %}
+{% for course_item in filtered_items %}
+<div class="blog-block post-content-area">
+  <div class="row">
+    <div class="col-md-6 col-sm-12 p-0 blog-image-wrap">
+      <div class="blog-image">
+        <img src="{{ BASE_PATH }}/assets/images/{{ course_item.img }}" alt="{{ course_item.title }} image">
+      </div>
+    </div>    
+    <div class="col-md-6 col-sm-12 p-0">
+      <div class="d-flex align-items-center">
+        <div class="blog-post">
+          <h3><a href="{{ BASE_PATH }}{{ course_item.url }}">{{ course_item.title }}</a></h3>
+          <p>{{ course_item.excerpt }}</p>
         </div>
+      </div>
     </div>
-	  <div class="mb-60"></div>
+  </div>
+</div>
+<div class="mb-60"></div>
 {% endfor %}

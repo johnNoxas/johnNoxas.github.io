@@ -157,7 +157,11 @@ sass:
 collections:
   category:
     output: true
-    sort_by: series_number
+  courses:
+    output: true
+  course_items:
+    output: true
+    sort_by: "episode"
   
 
 defaults:
@@ -167,3 +171,17 @@ defaults:
     type: category
   values:
     layout: "category"
+-
+  scope:
+    path: ""
+    type: courses
+  values:
+    layout: "course"
+    permalink: /courses/:title/
+-
+  scope:
+    path: ""
+    type: course_items
+  values:
+    layout: "course_item"
+    permalink: /courses/:path/

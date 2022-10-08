@@ -2495,9 +2495,14 @@ nav#menu span.fa.fa-bars:hover {
 }
 
 @include media-breakpoint-up(md) {
-    .blog-block .blog-post-wrap {
-        height:300px;
+    .blog-block .row > div {
+        height:300px !important;
+        overflow: hidden;
     }
+}
+
+.blog-block {
+    background-color: $white;
 }
 
 .blog-block .blog-image {
@@ -2507,6 +2512,7 @@ nav#menu span.fa.fa-bars:hover {
 }
 
 .blog-block .blog-image img {
+    object-position: center;
     object-fit: cover;
     height: 100%;
     transform: scale(1.0);
@@ -2521,7 +2527,7 @@ nav#menu span.fa.fa-bars:hover {
 }
 
 .blog-block .blog-post-wrap {
-    background-color: $white;
+    height:100%;
 }
 
 .blog-block .blog-post {
@@ -2553,6 +2559,10 @@ nav#menu span.fa.fa-bars:hover {
 
 .blog-posts-widget {
     top:100px;
+}
+
+course-list-widget {
+    max-height: calc(100vh - 120px);
 }
 
 .about-sidebar-widget h4,
